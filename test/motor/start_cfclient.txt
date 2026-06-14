@@ -1,0 +1,5 @@
+# 如果還沒進入環境
+source ~/桌面/klwang/workspace/cf_env/bin/activate
+
+# 啟動地面站
+cfclient
