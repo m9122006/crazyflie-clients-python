@@ -16,8 +16,8 @@ from cflib.crazyflie import Crazyflie
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                              QHBoxLayout, QPushButton, QLabel, QLineEdit, 
                              QTextEdit, QGridLayout)
-from PyQt6.QtCore import pyqtSignal, QObject
-from PyQt6.QtGui import QFont
+from PyQt6.QtCore import pyqtSignal, QObject, Qt
+from PyQt6.QtGui import QFont, QPixmap
 
 # 根據 cfclient 截圖修正的預設連線設定
 DEFAULT_URI = 'radio://0/79/2M'
@@ -52,14 +52,37 @@ class MotorTestGUI(QMainWindow):
         
     def init_ui(self):
         self.setWindowTitle('Crazyflie 馬達轉向測試 (自製飛控專用)')
-        self.resize(700, 500)
+        self.resize(900, 600)
         
         # 優先套用 Noto Sans TC
         self.setFont(QFont('Noto Sans TC', 10))
         
         main_widget = QWidget()
         self.setCentralWidget(main_widget)
-        layout = QVBoxLayout(main_widget)
+        main_layout = QVBoxLayout(main_widget)
+        
+        # ── 上方左右分割區 ──
+        upper_layout = QHBoxLayout()
+        
+        # 左側：顯示 motor.png 圖片
+        import os
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        image_path = os.path.join(script_dir, 'motor.png')
+        
+        self.img_label = QLabel()
+        if os.path.exists(image_path):
+            pixmap = QPixmap(image_path)
+            self.img_label.setPixmap(pixmap.scaled(350, 350, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+        else:
+            self.img_label.setText('找不到 motor.png 圖片')
+            self.img_label.setStyleSheet('border: 1px solid #ccc; color: red;')
+        self.img_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        upper_layout.addWidget(self.img_label)
+        
+        # 右側：控制面板
+        control_panel = QWidget()
+        control_layout = QVBoxLayout(control_panel)
+        control_layout.setContentsMargins(0, 0, 0, 0)
         
         # ── 頂部設定欄 ──
         config_layout = QHBoxLayout()
@@ -76,16 +99,17 @@ class MotorTestGUI(QMainWindow):
         self.btn_connect.setStyleSheet('font-weight: bold;')
         self.btn_connect.clicked.connect(self.toggle_connection)
         config_layout.addWidget(self.btn_connect)
-        layout.addLayout(config_layout)
+        control_layout.addLayout(config_layout)
         
-        # ── 中央馬達控制網格 ──
-        # 照標準四旋翼位置佈置：M3 (左前) | M4 (右前)
-        #                     M2 (左後) | M1 (右後)
+        # ── 中央馬達控制網格 (已對齊 motor.png 設定) ──
+        # 對應關係：
+        # M4 (左前) | M1 (右前)
+        # M3 (左後) | M2 (右後)
         grid = QGridLayout()
-        self.btn_m1 = QPushButton('M1 (右後)')
-        self.btn_m2 = QPushButton('M2 (左後)')
-        self.btn_m3 = QPushButton('M3 (左前)')
-        self.btn_m4 = QPushButton('M4 (右前)')
+        self.btn_m1 = QPushButton('M1 (右前)')
+        self.btn_m2 = QPushButton('M2 (右後)')
+        self.btn_m3 = QPushButton('M3 (左後)')
+        self.btn_m4 = QPushButton('M4 (左前)')
         
         self.motor_btns = [self.btn_m1, self.btn_m2, self.btn_m3, self.btn_m4]
         for btn in self.motor_btns:
@@ -98,11 +122,11 @@ class MotorTestGUI(QMainWindow):
         self.btn_m3.clicked.connect(lambda: self.run_motor(3))
         self.btn_m4.clicked.connect(lambda: self.run_motor(4))
         
-        grid.addWidget(self.btn_m3, 0, 0)
-        grid.addWidget(self.btn_m4, 0, 1)
-        grid.addWidget(self.btn_m2, 1, 0)
-        grid.addWidget(self.btn_m1, 1, 1)
-        layout.addLayout(grid)
+        grid.addWidget(self.btn_m4, 0, 0)
+        grid.addWidget(self.btn_m1, 0, 1)
+        grid.addWidget(self.btn_m3, 1, 0)
+        grid.addWidget(self.btn_m2, 1, 1)
+        control_layout.addLayout(grid)
         
         # ── 緊急停止按鈕 ──
         self.btn_stop = QPushButton('停止所有馬達 (ESC)')
@@ -110,13 +134,16 @@ class MotorTestGUI(QMainWindow):
         self.btn_stop.setMinimumHeight(60)
         self.btn_stop.setEnabled(False)
         self.btn_stop.clicked.connect(self.stop_all_motors)
-        layout.addWidget(self.btn_stop)
+        control_layout.addWidget(self.btn_stop)
+        
+        upper_layout.addWidget(control_panel)
+        main_layout.addLayout(upper_layout)
         
         # ── 底部日誌輸出區 ──
         self.console = QTextEdit()
         self.console.setReadOnly(True)
         self.console.setStyleSheet('background-color: #2b2b2b; color: #a9b7c6; font-family: "Noto Sans Mono", "Monospace";')
-        layout.addWidget(self.console)
+        main_layout.addWidget(self.console)
         
         sys.stdout = EmittingStream()
         sys.stdout.textWritten.connect(self.append_log)
