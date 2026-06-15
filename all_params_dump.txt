@@ -1,0 +1,413 @@
+# Crazyflie 參數匯出表
+# 連線來源: radio://0/79/2M
+==================================================
+
+[activeMarker]
+  activeMarker.back = 3
+  activeMarker.front = 1
+  activeMarker.left = 4
+  activeMarker.mode = 3
+  activeMarker.poll = 0
+  activeMarker.right = 2
+
+[colAv]
+  colAv.bboxMaxX = 3.4028234663852886e+38
+  colAv.bboxMaxY = 3.4028234663852886e+38
+  colAv.bboxMaxZ = 3.4028234663852886e+38
+  colAv.bboxMinX = -3.4028234663852886e+38
+  colAv.bboxMinY = -3.4028234663852886e+38
+  colAv.bboxMinZ = -3.4028234663852886e+38
+  colAv.ellipsoidX = 0.30000001192092896
+  colAv.ellipsoidY = 0.30000001192092896
+  colAv.ellipsoidZ = 0.8999999761581421
+  colAv.enable = 0
+  colAv.horizon = 1.0
+  colAv.maxPeerLocAge = 5000
+  colAv.maxSpeed = 0.5
+  colAv.sidestepThrsh = 0.25
+  colAv.vorIters = 100
+  colAv.vorTol = 9.999999747378752e-06
+
+[commander]
+  commander.enHighLevel = 0
+
+[cppm]
+  cppm.angPitch = 50.0
+  cppm.angRoll = 50.0
+  cppm.ratePitch = 720.0
+  cppm.rateRoll = 720.0
+  cppm.rateYaw = 400.0
+
+[cpu]
+  cpu.flash = 1024
+  cpu.id0 = 4194385
+  cpu.id1 = 1112363030
+  cpu.id2 = 540358740
+
+[crtpsrv]
+  crtpsrv.echoDelay = 0
+
+[ctrlAtt]
+  ctrlAtt.coll_fairness = 0.25
+  ctrlAtt.mixing_factor = 1.0
+  ctrlAtt.tau_rp = 0.25
+  ctrlAtt.tau_xy = 0.30000001192092896
+  ctrlAtt.tau_z = 0.30000001192092896
+  ctrlAtt.zeta_xy = 0.8500000238418579
+  ctrlAtt.zeta_z = 0.8500000238418579
+
+[ctrlINDI]
+  ctrlINDI.act_dyn_p = 0.03149000182747841
+  ctrlINDI.act_dyn_q = 0.03149000182747841
+  ctrlINDI.act_dyn_r = 0.03149000182747841
+  ctrlINDI.bound_ctrl_input = 32000.0
+  ctrlINDI.filt_cutoff = 8.0
+  ctrlINDI.filt_cutoff_r = 8.0
+  ctrlINDI.g1_p = 0.006614599842578173
+  ctrlINDI.g1_q = 0.005212500225752592
+  ctrlINDI.g1_r = 0.001496999990195036
+  ctrlINDI.g2 = 4.347499998402782e-05
+  ctrlINDI.outerLoopActive = 1
+  ctrlINDI.ref_err_p = 5.0
+  ctrlINDI.ref_err_q = 5.0
+  ctrlINDI.ref_err_r = 5.0
+  ctrlINDI.ref_rate_p = 24.0
+  ctrlINDI.ref_rate_q = 24.0
+  ctrlINDI.ref_rate_r = 24.0
+  ctrlINDI.thrust_threshold = 300.0
+
+[ctrlLee]
+  ctrlLee.J_x = 1.657171014812775e-05
+  ctrlLee.J_y = 1.6655601939419284e-05
+  ctrlLee.J_z = 2.9261651434353553e-05
+  ctrlLee.KI_x = 0.029999999329447746
+  ctrlLee.KI_y = 0.029999999329447746
+  ctrlLee.KI_z = 0.029999999329447746
+  ctrlLee.KR_x = 0.007000000216066837
+  ctrlLee.KR_y = 0.007000000216066837
+  ctrlLee.KR_z = 0.00800000037997961
+  ctrlLee.Kpos_D_limit = 100.0
+  ctrlLee.Kpos_Dx = 4.0
+  ctrlLee.Kpos_Dy = 4.0
+  ctrlLee.Kpos_Dz = 4.0
+  ctrlLee.Kpos_I_limit = 2.0
+  ctrlLee.Kpos_Ix = 0.0
+  ctrlLee.Kpos_Iy = 0.0
+  ctrlLee.Kpos_Iz = 0.0
+  ctrlLee.Kpos_P_limit = 100.0
+  ctrlLee.Kpos_Px = 7.0
+  ctrlLee.Kpos_Py = 7.0
+  ctrlLee.Kpos_Pz = 7.0
+  ctrlLee.Kw_x = 0.0011500000255182385
+  ctrlLee.Kw_y = 0.0011500000255182385
+  ctrlLee.Kw_z = 0.0020000000949949026
+  ctrlLee.mass = 0.028999999165534973
+
+[ctrlMel]
+  ctrlMel.i_range_m_xy = 1.0
+  ctrlMel.i_range_m_z = 1500.0
+  ctrlMel.i_range_xy = 2.0
+  ctrlMel.i_range_z = 0.4000000059604645
+  ctrlMel.kR_xy = 70000.0
+  ctrlMel.kR_z = 60000.0
+  ctrlMel.kd_omega_rp = 200.0
+  ctrlMel.kd_xy = 0.20000000298023224
+  ctrlMel.kd_z = 0.4000000059604645
+  ctrlMel.ki_m_xy = 0.0
+  ctrlMel.ki_m_z = 500.0
+  ctrlMel.ki_xy = 0.05000000074505806
+  ctrlMel.ki_z = 0.05000000074505806
+  ctrlMel.kp_xy = 0.4000000059604645
+  ctrlMel.kp_z = 1.25
+  ctrlMel.kw_xy = 20000.0
+  ctrlMel.kw_z = 12000.0
+  ctrlMel.mass = 0.028999999165534973
+  ctrlMel.massThrust = 132000.0
+
+[deck]
+  deck.bcAI = 0
+  deck.bcActiveMarker = 0
+  deck.bcBuzzer = 0
+  deck.bcDWM1000 = 0
+  deck.bcFlow = 0
+  deck.bcFlow2 = 0
+  deck.bcLedRing = 0
+  deck.bcLighthouse4 = 0
+  deck.bcLoco = 0
+  deck.bcMultiranger = 0
+  deck.bcOA = 0
+  deck.bcUSD = 0
+  deck.bcZRanger = 0
+  deck.bcZRanger2 = 0
+
+[firmware]
+  firmware.modified = 0
+  firmware.revision0 = 1319578809
+  firmware.revision1 = 10629
+
+[flightmode]
+  flightmode.althold = 0
+  flightmode.posSet = 0
+  flightmode.poshold = 0
+  flightmode.stabModePitch = 1
+  flightmode.stabModeRoll = 1
+  flightmode.stabModeYaw = 0
+  flightmode.yawMode = 2
+
+[flowdeck]
+  flowdeck.flowdeckPos_x = 0.0
+  flowdeck.flowdeckPos_y = 0.0
+  flowdeck.flowdeckPos_z = 0.0
+
+[health]
+  health.batTestPWMRatio = 0
+  health.propTestPWMRatio = 0
+  health.propTestThreshold = 0.0
+  health.propTestThresholdL = 0.009999999776482582
+  health.startBatTest = 0
+  health.startPropTest = 0
+
+[hlCommander]
+  hlCommander.groupmask = 0
+  hlCommander.vland = 0.5
+  hlCommander.vtoff = 0.5
+
+[imu_sensors]
+  imu_sensors.BMP3XX = 1
+  imu_sensors.imuPhi = 0.0
+  imu_sensors.imuPsi = 0.0
+  imu_sensors.imuTheta = 0.0
+
+[kalman]
+  kalman.cop_x = 0.0
+  kalman.cop_y = 0.0
+  kalman.cop_z = 0.0
+  kalman.dragB_x = 0.0
+  kalman.dragB_y = 0.0
+  kalman.dragB_z = 0.0
+  kalman.initialX = 0.0
+  kalman.initialY = 0.0
+  kalman.initialYaw = 0.0
+  kalman.initialZ = 0.0
+  kalman.mNBaro = 2.0
+  kalman.mNGyro_rollpitch = 0.10000000149011612
+  kalman.mNGyro_yaw = 0.10000000149011612
+  kalman.maxPos = 100.0
+  kalman.maxVel = 10.0
+  kalman.pNAcc_xy = 0.5
+  kalman.pNAcc_z = 1.0
+  kalman.pNAtt = 0.0
+  kalman.pNPos = 0.0
+  kalman.pNVel = 0.0
+  kalman.resetEstimation = 0
+  kalman.robustTdoa = 0
+  kalman.robustTwr = 0
+
+[led]
+  led.bitmask = 0
+
+[led_deck_ctrl]
+  led_deck_ctrl.rgb888 = 0
+
+[lighthouse]
+  lighthouse.bsAvailable = 0
+  lighthouse.bsCalibReset = 0
+  lighthouse.enLhRawStream = 0
+  lighthouse.lh2maxRate = 50
+  lighthouse.method = 1
+  lighthouse.sweepStd = 0.00039999998989515007
+  lighthouse.sweepStd2 = 0.0010000000474974513
+  lighthouse.systemType = 2
+
+[locSrv]
+  locSrv.enLhAngleStream = 0
+  locSrv.enLhMtchStm = 0
+  locSrv.enRangeStreamFP32 = 0
+  locSrv.extPosStdDev = 0.009999999776482582
+  locSrv.extQuatStdDev = 0.0044999998062849045
+  locSrv.maxTimeLhMtchStm = 25
+  locSrv.minBsLhMtchStm = 2
+
+[loco]
+  loco.mode = 0
+
+[memTst]
+  memTst.resetW = 0
+
+[motion]
+  motion.adaptive = 0
+  motion.disable = 0
+  motion.flowStdFixed = 2.0
+
+[motorPowerSet]
+  motorPowerSet.enable = 0
+  motorPowerSet.m1 = 0
+  motorPowerSet.m2 = 0
+  motorPowerSet.m3 = 0
+  motorPowerSet.m4 = 0
+
+[multiranger]
+  multiranger.filterMask = 1
+
+[pid_attitude]
+  pid_attitude.attFiltCut = 15.0
+  pid_attitude.attFiltEn = 1
+  pid_attitude.pitch_kd = 0.0
+  pid_attitude.pitch_kff = 0.0
+  pid_attitude.pitch_ki = 3.0
+  pid_attitude.pitch_kp = 4.0
+  pid_attitude.roll_kd = 0.0
+  pid_attitude.roll_kff = 0.0
+  pid_attitude.roll_ki = 3.0
+  pid_attitude.roll_kp = 4.0
+  pid_attitude.yawMaxDelta = 0.0
+  pid_attitude.yaw_kd = 0.3499999940395355
+  pid_attitude.yaw_kff = 0.0
+  pid_attitude.yaw_ki = 1.0
+  pid_attitude.yaw_kp = 6.0
+
+[pid_rate]
+  pid_rate.omxFiltCut = 30.0
+  pid_rate.omyFiltCut = 30.0
+  pid_rate.omzFiltCut = 30.0
+  pid_rate.pitch_kd = 1.2000000476837158
+  pid_rate.pitch_kff = 0.0
+  pid_rate.pitch_ki = 60.0
+  pid_rate.pitch_kp = 45.0
+  pid_rate.rateFiltEn = 1
+  pid_rate.roll_kd = 1.2000000476837158
+  pid_rate.roll_kff = 0.0
+  pid_rate.roll_ki = 60.0
+  pid_rate.roll_kp = 45.0
+  pid_rate.yaw_kd = 0.0
+  pid_rate.yaw_kff = 0.0
+  pid_rate.yaw_ki = 16.700000762939453
+  pid_rate.yaw_kp = 120.0
+
+[pm]
+  pm.criticalLowVoltage = 6.0
+  pm.lowVoltage = 6.400000095367432
+
+[posCtlPid]
+  posCtlPid.pLimit = 20.0
+  posCtlPid.rLimit = 20.0
+  posCtlPid.thrustBase = 5000
+  posCtlPid.thrustMin = 200
+  posCtlPid.xKd = 0.0
+  posCtlPid.xKff = 0.0
+  posCtlPid.xKi = 0.0
+  posCtlPid.xKp = 2.0
+  posCtlPid.xVelMax = 1.0
+  posCtlPid.yKd = 0.0
+  posCtlPid.yKff = 0.0
+  posCtlPid.yKi = 0.0
+  posCtlPid.yKp = 2.0
+  posCtlPid.yVelMax = 1.0
+  posCtlPid.zKd = 0.0
+  posCtlPid.zKff = 0.0
+  posCtlPid.zKi = 0.5
+  posCtlPid.zKp = 2.0
+  posCtlPid.zVelMax = 1.0
+
+[posCtrlIndi]
+  posCtrlIndi.K_dxi_x = 5.0
+  posCtrlIndi.K_dxi_y = 5.0
+  posCtrlIndi.K_dxi_z = 5.0
+  posCtrlIndi.K_xi_x = 1.0
+  posCtrlIndi.K_xi_y = 1.0
+  posCtrlIndi.K_xi_z = 1.0
+  posCtrlIndi.pq_clamping = 10.0
+
+[posEstAlt]
+  posEstAlt.estAlphaAsl = 0.8999999761581421
+  posEstAlt.estAlphaZr = 0.8999999761581421
+  posEstAlt.vAccDeadband = 0.03999999910593033
+  posEstAlt.velFactor = 1.0
+  posEstAlt.velZAlpha = 0.9950000047683716
+
+[powerDist]
+  powerDist.idleThrust = 7000
+
+[radiotest]
+  radiotest.channel = 80
+  radiotest.contwave = 0
+  radiotest.power = -16
+
+[ring]
+  ring.effect = 0
+  ring.emptyCharge = 3.0999999046325684
+  ring.fadeColor = 0
+  ring.fadeTime = 0.5
+  ring.fullCharge = 4.199999809265137
+  ring.headlightEnable = 0
+  ring.neffect = 0
+  ring.solidBlue = 20
+  ring.solidGreen = 20
+  ring.solidRed = 20
+
+[sensfusion6]
+  sensfusion6.baseZacc = 0.9916190505027771
+  sensfusion6.ki = 0.0020000000949949026
+  sensfusion6.kp = 0.800000011920929
+
+[sound]
+  sound.effect = 0
+  sound.freq = 4000
+  sound.neffect = 14
+
+[stabilizer]
+  stabilizer.controller = 1
+  stabilizer.estimator = 1
+  stabilizer.stop = 0
+
+[supervisor]
+  supervisor.infdmp = 0
+  supervisor.landedTimeout = 3000
+  supervisor.prefltTimeout = 30000
+  supervisor.tmblChckEn = 1
+
+[syslink]
+  syslink.probe = 0
+
+[system]
+  system.assertInfo = 0
+  system.doAssert = 0
+  system.highlight = 0
+  system.selftestPassed = 1
+  system.storageReformat = 0
+  system.storageStats = 0
+  system.taskDump = 0
+  system.testLogParam = 0
+
+[tdoa2]
+  tdoa2.stddev = 0.15000000596046448
+
+[tdoa3]
+  tdoa3.stddev = 0.0
+
+[tdoaEngine]
+  tdoaEngine.logId = 0
+  tdoaEngine.logOthrId = 0
+  tdoaEngine.matchAlgo = 0
+
+[usd]
+  usd.canLog = 0
+  usd.logging = 0
+
+[usec]
+  usec.reset = 0
+
+[velCtlPid]
+  velCtlPid.vxKFF = 0.0
+  velCtlPid.vxKd = 0.0
+  velCtlPid.vxKi = 1.0
+  velCtlPid.vxKp = 25.0
+  velCtlPid.vyKFF = 0.0
+  velCtlPid.vyKd = 0.0
+  velCtlPid.vyKi = 1.0
+  velCtlPid.vyKp = 25.0
+  velCtlPid.vzKFF = 0.0
+  velCtlPid.vzKd = 0.0
+  velCtlPid.vzKi = 15.0
+  velCtlPid.vzKp = 25.0
+
