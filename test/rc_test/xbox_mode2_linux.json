@@ -1,0 +1,80 @@
+{
+  "inputconfig": {
+    "inputdevice": {
+      "axis": [
+        {
+          "id": 1,
+          "scale": -1.0,
+          "key": "pitch",
+          "name": "pitch",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 0,
+          "scale": 1.0,
+          "key": "roll",
+          "name": "roll",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 4,
+          "scale": -1.0,
+          "key": "thrust",
+          "name": "thrust",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 3,
+          "scale": 1.0,
+          "key": "yaw",
+          "name": "yaw",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 4,
+          "scale": 1.0,
+          "key": "arm",
+          "name": "arm",
+          "type": "Input.BUTTON"
+        },
+        {
+          "id": 5,
+          "scale": 1.0,
+          "key": "estop",
+          "name": "estop",
+          "type": "Input.BUTTON"
+        },
+        {
+          "id": 3,
+          "scale": 1.0,
+          "key": "pitchPos",
+          "name": "pitchPos",
+          "type": "Input.BUTTON"
+        },
+        {
+          "id": 0,
+          "scale": 1.0,
+          "key": "pitchNeg",
+          "name": "pitchNeg",
+          "type": "Input.BUTTON"
+        },
+        {
+          "id": 1,
+          "scale": 1.0,
+          "key": "rollPos",
+          "name": "rollPos",
+          "type": "Input.BUTTON"
+        },
+        {
+          "id": 2,
+          "scale": 1.0,
+          "key": "rollNeg",
+          "name": "rollNeg",
+          "type": "Input.BUTTON"
+        }
+      ],
+      "name": "xbox_mode2_linux",
+      "updateperiod": 10
+    }
+  }
+}
