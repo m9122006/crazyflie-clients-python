@@ -1,0 +1,14 @@
+  ### 步驟 1：切換到專案根目錄                                                                               
+  
+    cd ~/桌面/klwang/workspace/crazyflie-clients-python
+  
+  ### 步驟 2：啟動 Python 虛擬環境
+  
+    source ../cf_env/bin/activate
+  
+  ### 步驟 3：執行測試腳本
+  
+    python test/motor/test_motors_single.py
+
+  ### 或啟動地面站
+    cfclient
