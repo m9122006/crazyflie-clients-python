@@ -101,7 +101,10 @@ def main():
         wait_for_position_estimator(scf)
 
         print('[3/5] 準備起飛，按下 Ctrl+C 可隨時緊急降落！')
-        time.sleep(2.0) # 給予操作者反應時間
+        # 解鎖電機 (Arming)
+        print('      正在解鎖無人機電機 (Arming)...')
+        scf.cf.supervisor.send_arming_request(True)
+        time.sleep(2.0) # 給予操作者反應時間與讓狀態就緒
         
         # 計算起飛與降落所需的時間 (Duration = Distance / Velocity)
         takeoff_duration = TARGET_HEIGHT / TAKEOFF_VELOCITY
@@ -129,6 +132,10 @@ def main():
             
             # 徹底關閉馬達指令，避免落地後持續旋轉 (發送 stop 停止所有動作)
             scf.cf.high_level_commander.stop()
+            
+            # 上鎖電機 (Disarm)
+            print('      正在上鎖無人機電機 (Disarm)...')
+            scf.cf.supervisor.send_arming_request(False)
             print('[完成] 飛機已著陸，馬達已停機。')
 
 if __name__ == '__main__':
